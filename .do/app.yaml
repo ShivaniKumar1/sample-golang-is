@@ -4,3 +4,14 @@ services:
   github:
     repo: digitalocean/sample-golang
     branch: main
+- environment_slug: go
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: digitalocean/sample-golang
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  internal_ports:
+  - 8080
+  name: internal-service
+  run_command: bin/sample-golang
